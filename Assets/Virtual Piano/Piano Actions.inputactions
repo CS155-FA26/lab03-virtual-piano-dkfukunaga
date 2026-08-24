@@ -1,0 +1,95 @@
+{
+    "version": 1,
+    "name": "Piano Actions",
+    "maps": [
+        {
+            "name": "Piano",
+            "id": "6f14bb83-948a-49ed-bda9-3f250be92cff",
+            "actions": [
+                {
+                    "name": "PlayA",
+                    "type": "Button",
+                    "id": "d4e05085-1d91-4e4b-b4be-5ae7cfc687b1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PlayS",
+                    "type": "Button",
+                    "id": "50522c20-72ae-4ea3-9448-0e5086958e6a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PlayD",
+                    "type": "Button",
+                    "id": "da678e5b-2760-4e56-b0f2-4a917557f9ff",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PlayF",
+                    "type": "Button",
+                    "id": "6b97adbd-1953-4184-b837-5102d067135f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8806110f-f148-4097-94b0-d0c7e375b8a5",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayA",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f9cbea84-330d-4ab0-9b38-112a362e4208",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayS",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f5a0b723-0c27-4d4c-8115-f39d150b2282",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayD",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e7a6b65f-c710-4df0-8f90-a755f00d033e",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayF",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

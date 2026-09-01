@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Lab03-Virtual-Piano.slnx"
+    "dotnet.defaultSolution": "lab03-virtual-piano-dkfukunaga.slnx"
 }

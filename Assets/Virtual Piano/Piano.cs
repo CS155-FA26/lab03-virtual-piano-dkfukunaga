@@ -94,7 +94,14 @@ public class Piano : MonoBehaviour
 
     public void addTimer(float t)
     {
-        spinTimer += t;
+        if (spinTimer > 1f)
+        {
+            spinTimer += t/spinTimer;
+        } else 
+        {
+            spinTimer += t;
+        }
+        Debug.Log(spinTimer);
     }
 
     IEnumerator FadeToWhite()

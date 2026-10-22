@@ -13,15 +13,20 @@ public class Piano : MonoBehaviour
     [SerializeField] GameObject keyH;
     [SerializeField] GameObject keyJ;
     [SerializeField] GameObject keyK;
+    [SerializeField] GameObject dancer;
     [SerializeField] GameObject moodLight;
     [SerializeField] float lightHoldTime = 0.5f;   // stays on the note's color
     [SerializeField] float fadeDuration = 1f;      // time to blend back to white
+    [SerializeField] float torque = 5f;
+    float spinTimer = 0f;
 
     Coroutine resetRoutine;
     Light light;
+    // Rigidbody rb;
 
     public void Awake() {
         light = moodLight.GetComponent<Light>();
+        // rb = dancer.GetComponent<Rigidbody>();
     }
 
     // relative pitches:
@@ -70,18 +75,26 @@ public class Piano : MonoBehaviour
     {
         Debug.Log("Playing Key: " + key.name + " pitch: " + pitch);
 
+        // rb.AddRelativeTorque(new Vector3(0f, torque, 0f));
+        addTimer(1f);
+
         Animator animator = key.GetComponent<Animator>();
         animator.Play("KeyPressed");
 
         AudioSource note = key.GetComponent<AudioSource>();
         note.clip = noteClip;
-        note.pitch = pitch;
+        note.pitch = pitch;  
         note.Play();
 
         light.color = color;
 
         if (resetRoutine != null) StopCoroutine(resetRoutine);
         resetRoutine = StartCoroutine(FadeToWhite());
+    }
+
+    public void addTimer(float t)
+    {
+        spinTimer += t;
     }
 
     IEnumerator FadeToWhite()
@@ -99,5 +112,17 @@ public class Piano : MonoBehaviour
 
         light.color = Color.white;
         resetRoutine = null;
+    }
+
+    protected void Update()
+    {
+        if (spinTimer > 0f)
+        {
+            dancer.transform.Rotate(Vector3.up * spinTimer * torque);
+            spinTimer -= Time.deltaTime;
+        } else if (spinTimer < 0f)
+        {
+            spinTimer = 0f;
+        }
     }
 }
